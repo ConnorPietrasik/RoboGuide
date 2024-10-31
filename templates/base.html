@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>RoboGuide</title>
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+    </head>
+    <body>
+        <div class="nav-top">
+            <h1 class="title">RoboGuide</h1>
+            <nav>
+                <a href="/", class="nav-item">Home</a>
+                <a href="/locations", class="nav-item">Locations</a>
+                <a href="/admin", class="nav-admin">Admin</a>
+            </nav>
+        </div>
+        {% block content %} {% endblock %}
+    </body>
+</html>

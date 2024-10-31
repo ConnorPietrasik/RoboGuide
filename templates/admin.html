@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Admin</h1>
+    {% if working %}
+        <h3 class="current-location">Status: Working! Current Location: {{ cur_location[1] }}</h3>
+        <div class="admin-buttons">
+            <button class="admin-off">To Charging Station</button>
+            <button class="admin-emergency">Emergency Shutdown</button>
+        </div>
+        <div class="stream"></div>
+        <button class="captions-button">Toggle Captions</button>
+    {% else %}
+        <h3 class="current-location">Status: Off. Taking a break!</h3>
+        <form action="/admin/start" method="POST", class="admin-start-form">
+            <label for="location">Starting location: </label>
+            <select id="location", name="location">
+                <option value="0">Current Location</option>
+                {% for location in locations %}
+                    <option value="{{location[0]}}">{{location[1]}}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" value="Start" />
+        </form>
+    {% endif %}
+    <div class="admin-options">
+        <a href="/admin" class="admin-options-item">Set Work Times</a>
+        <a href="/admin" class="admin-options-item">Location Settings</a>
+        <a href="/admin" class="admin-options-item">Route Settings</a>
+        <a href="/admin" class="admin-options-item">Diagnostic Info</a>
+    </div>
+{% endblock %}

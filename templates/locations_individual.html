@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="locations-ind-name">Location: {{ name }}</h1>
+    <img src="/static/images/locations/{{ id }}.jpg" alt="Image of {{ name }}" class="locations-ind-img" />
+    <h4 class="locations-ind-desc-head">Description:</h4>
+    <p class="locations-ind-desc">{{ description }}</p>
+    <button class="locations-ind-go">Go to {{name}}</button>
+{% endblock %}

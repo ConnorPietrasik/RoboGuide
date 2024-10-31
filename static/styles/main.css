@@ -1,0 +1,162 @@
+.nav-top {
+    background-color: rgb(249, 255, 159);
+}
+
+.title {
+    text-align: center;
+    color: rgb(103, 0, 134);
+    font-size: 84px;
+    margin-bottom: 0px;
+}
+
+.nav-item {
+    color: darkgoldenrod;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.nav-admin {
+    color: darkgoldenrod;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    padding-right: 14px;
+    float: right;
+}
+
+body {
+    background-color: lightgrey;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
+h3 {
+    text-align: center;
+}
+
+.current-location {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 0px;
+}
+
+.learn-more {
+    text-align: center;
+    font-size: 20px;
+    text-decoration: none;
+    color: darkgoldenrod;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.stream {
+    width: 854px;
+    height: 480px;
+    background-color: #555;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.captions-button {
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+
+.locations-div {
+    text-align: center;
+}
+
+.locations-title {
+    text-align: center;
+    margin-bottom: 1px;
+}
+
+.locations-list {
+    text-align: left;
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.locations-li {
+    color: darkgoldenrod;
+}
+
+.locations-a {
+    font-size: 20px;
+    text-decoration: none;
+    color: darkgoldenrod;
+}
+
+.locations-li:hover, .locations-a:hover {
+    color: rgb(103, 0, 134);
+}
+
+.locations-ind-name {
+    text-align: left;
+    margin-bottom: 0px;
+}
+
+.locations-ind-desc-head {
+    margin-bottom: 0px;
+}
+
+.locations-ind-desc {
+    margin-top: 0px;
+}
+
+.locations-ind-img {
+    max-height: 60%;
+    max-width: 100%;
+}
+
+.locations-ind-go {
+
+}
+
+.admin-buttons {
+    max-width: fit-content;
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.admin-emergency {
+    color: red;
+}
+
+.admin-start-form {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    text-align: center;
+}
+
+.admin-options {
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.admin-options-item {
+    font-size: 20px;
+    text-decoration: none;
+    color: darkgoldenrod;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
+}
+
+.admin-options-item:hover {
+    color: rgb(103, 0, 134);
+}

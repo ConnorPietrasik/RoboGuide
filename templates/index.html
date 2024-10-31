@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Welcome to RoboGuide!</h1>
+    <h3 class="current-location">Current Location: {{ cur_location[1] }}</h3>
+    <a href="/locations/{{cur_location[0]}}" class="learn-more">Learn More</a>
+    <div class="stream"></div>
+    <button class="captions-button">Toggle Captions</button>
+{% endblock %}
