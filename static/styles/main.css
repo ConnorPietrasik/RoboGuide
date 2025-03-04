@@ -49,6 +49,10 @@ h3 {
     text-align: center;
 }
 
+h4 {
+    font-size: 30px;
+}
+
 hr {
     margin-top: 60px;
     border: none;
@@ -144,26 +148,53 @@ hr {
     color: rgb(103, 0, 134);
 }
 
-.locations-ind-name {
-    text-align: left;
-    margin-bottom: 0px;
+.locations-ind-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
 }
 
+.locations-ind-name,
 .locations-ind-desc-head {
-    margin-bottom: 0px;
-}
-
-.locations-ind-desc {
-    margin-top: 0px;
+    margin-bottom: 10px;
 }
 
 .locations-ind-img {
-    max-height: 60%;
-    max-width: 100%;
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 1000px;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.locations-ind-desc {
+    text-align: left;
+    font-size: 20px;
+    max-width: 80%;
 }
 
 .locations-ind-go {
+    display: block;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: none;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
 
+.locations-ind-go:hover {
+    color: white;
+    background-color: grey;
 }
 
 .admin-buttons {
