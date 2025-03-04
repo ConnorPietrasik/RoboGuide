@@ -1,29 +1,7 @@
 {% extends 'base.html' %}
 
-{% block content %}<h1>Welcome to RoboGuide!</h1>
-<h3 class="current-location">Current Location: {{ cur_location[1] }}</h3>
-<div id="map" style="height: 450px; width: 50%; margin: 0 auto"></div>
-<a href="/locations/{{ cur_location[0] }}" class="learn-more">Learn More</a>
-<div class="stream"></div>
-<button class="captions-button">Toggle Captions</button>
+{% block content %}
 
-<!-- Leaflet, Map generation -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-
-
-<script>
-    // idk why there's an error at this line
-    var curLocationCoords = {{ cur_location_coords | tojson }};
-
-    var static_coords = [37.33533958047712, -121.88105200869731];
-    var map = L.map('map').setView(static_coords, 16.25);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        maxZoom: 19
-    }).addTo(map);
-
-    L.marker(curLocationCoords).addTo(map).bindPopup('MLK Library').openPopup();
-</script>
+<h1>Welcome!</h1>
 
 {% endblock %}

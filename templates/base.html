@@ -2,16 +2,17 @@
     <head>
         <title>RoboGuide</title>
         <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/main.css') }}">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     </head>
-    <body>
-        <div class="nav-top">
-            <h1 class="title">RoboGuide</h1>
-            <nav>
-                <a href="/", class="nav-item">Home</a>
-                <a href="/locations", class="nav-item">Locations</a>
-                <a href="/admin", class="nav-admin">Admin</a>
-            </nav>
-        </div>
-        {% block content %} {% endblock %}
-    </body>
+    <header>
+        <h1 class="title">RoboGuide</h1>
+        <nav>
+            <a href="/", class="button">Home</a>
+            <a href="/location_map", class="button">Map</a>
+            <a href="/locations", class="button">Locations</a>
+            <a href="/admin", class="button nav-login">Login</a>
+        </nav>
+        <hr>
+    </header>
+    {% block content %} {% endblock %}
 </html>

@@ -22,10 +22,13 @@ locations_data = {
 @app.route("/", methods=["GET"])
 #TODO: Modify to dynamically change map marker depending on goal location
 def home():
+    return render_template("index.html")
+
+@app.route("/location_map/", methods=["GET"])
+def location_map():
     cur_location_coords = [37.33568932985038, -121.88507532212499]  # Example: MLK Library
     current = 'MLK Library'
-    return render_template("index.html", cur_location=cur_location, cur_location_coords=cur_location_coords)
-
+    return render_template("map.html", cur_location=cur_location, cur_location_coords=cur_location_coords)
 
 @app.route("/locations/", methods=["GET"])
 def locations_page():
