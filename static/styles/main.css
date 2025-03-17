@@ -88,6 +88,8 @@ hr {
     height: 450px;
     width: 100%; /* Make them take full width of container */
     background-color: darkgray; /* Placeholder color */
+    object-fit: contain;
+    margin: auto;
 }
 
 .learn-more,

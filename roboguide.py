@@ -1,4 +1,5 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, Response
+import utils
 
 app = Flask(__name__)
 
@@ -45,6 +46,10 @@ def locations_individual(id):
 @app.route("/admin", methods=["GET"])
 def admin():
     return render_template("admin.html", working=True, cur_location=cur_location, locations=locations)
+
+@app.route("/video_feed")
+def video_feed():
+    return Response(utils.gen_frames(), mimetype="multipart/x-mixed-replace; boundary=frame")
 
 if __name__ == "__main__":
     app.run("0.0.0.0", 80)

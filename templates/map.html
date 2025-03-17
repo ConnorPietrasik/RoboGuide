@@ -9,14 +9,15 @@
         <a href="/locations/{{ cur_location[0] }}" class="learn-more">Learn More</a>
     </div>
     <div class="stream-container">
-        <div class="stream">
+            {#
+            For Youtube streaming
             <iframe
                 src="https://www.youtube.com/embed/live_stream?channel=UCak2uhnOAoIj3ULREF6aqKA"
-                height="100%"
-                width="100%"
+                class="stream"
                 allowfullscreen>
             </iframe>
-        </div>
+            #}
+            <img src="{{ url_for("video_feed") }}" class="stream">
         <button class="button captions-button">Toggle Captions</button>
     </div>
 </div>
