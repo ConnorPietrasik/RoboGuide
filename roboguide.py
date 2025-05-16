@@ -6,6 +6,8 @@ app = Flask(__name__)
 with open("current_location", "r") as f:
     cur_location = int(f.read())
 
+working = True
+
 #Future idea: switch to database and add easy admin features
 locations = [
     {
@@ -247,19 +249,27 @@ def locations_individual(id):
 
 @app.route("/locations/current", methods=["POST"])
 def set_current_location():
-    global cur_location 
+    global cur_location, working
+    if int(request.form["id"]) == -1:
+        return location_map()
     cur_location = int(request.form["id"])
     with open("current_location", "w") as f:
         f.write(str(cur_location))
+    working = True
     return location_map()
 
 @app.route("/admin", methods=["GET"])
 def admin():
-    return render_template("admin.html", working=True, cur_location=cur_location, locations=locations, options=0)
+    return render_template("admin.html", working=working, cur_location=cur_location, locations=locations, options=0)
 
 @app.route("/admin/<options>", methods=["GET"])
 def admin_options(options):
-    return render_template("admin.html", working=True, cur_location=cur_location, locations=locations, options=int(options))
+    global working
+
+    if options == "off":
+        working = False
+        return render_template("admin.html", working=working, cur_location=cur_location, locations=locations, options=0)
+    return render_template("admin.html", working=working, cur_location=cur_location, locations=locations, options=int(options))
 
 @app.route("/video_feed")
 def video_feed():
