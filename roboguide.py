@@ -1,11 +1,12 @@
-from flask import Flask, render_template, Response
+from flask import Flask, render_template, Response, request
 import utils
 
 app = Flask(__name__)
 
-cur_location = 1
+with open("current_location", "r") as f:
+    cur_location = int(f.read())
 
-#TODO: Switch to database and implement features
+#Future idea: switch to database and add easy admin features
 locations = [
     {
         "name": "Science Building",
@@ -243,6 +244,14 @@ def locations_individual(id):
         return "Location not found", 404
     return render_template("locations_individual.html", id=id, name=location["name"],
         description=location["description"])
+
+@app.route("/locations/current", methods=["POST"])
+def set_current_location():
+    global cur_location 
+    cur_location = int(request.form["id"])
+    with open("current_location", "w") as f:
+        f.write(str(cur_location))
+    return location_map()
 
 @app.route("/admin", methods=["GET"])
 def admin():

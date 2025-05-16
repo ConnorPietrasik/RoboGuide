@@ -2,7 +2,10 @@
 
 {% block content %}
     <h1 class="locations-ind-name">Location: {{ name }}</h1>
-    <button class="locations-ind-go">Go to {{name}}</button>
+    <form method="POST", action="{{ url_for('set_current_location') }}">
+        <input type="hidden" id="id" name="id" value="{{ id }}">
+        <button class="locations-ind-go">Go to {{name}}</button>
+    </form>
     <img src="/static/images/locations/{{ id }}.jpg" alt="Image of {{ name }}" class="locations-ind-img" />
     <hr>
     <h4 class="locations-ind-desc-head">Description:</h4>
