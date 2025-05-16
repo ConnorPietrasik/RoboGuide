@@ -255,7 +255,11 @@ def set_current_location():
 
 @app.route("/admin", methods=["GET"])
 def admin():
-    return render_template("admin.html", working=True, cur_location=cur_location, locations=locations)
+    return render_template("admin.html", working=True, cur_location=cur_location, locations=locations, options=0)
+
+@app.route("/admin/<options>", methods=["GET"])
+def admin_options(options):
+    return render_template("admin.html", working=True, cur_location=cur_location, locations=locations, options=int(options))
 
 @app.route("/video_feed")
 def video_feed():
